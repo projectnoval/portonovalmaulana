@@ -1,0 +1,70 @@
+
+  /* Membungkus tombol utama dan opsinya agar posisinya teratur */
+  .contact-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+  }
+
+  /* Base style untuk semua tombol */
+  .btn {
+    padding: 15px 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #9d814c;
+    background: transparent;
+  }
+
+  /* Styling tombol utama (CONTACT ME) */
+  .btn-primary {
+    background-color: #9d814c;
+    color: #111111;
+  }
+
+  .btn-primary:hover {
+    background-color: #bfa165;
+    border-color: #bfa165;
+  }
+
+  /* Styling tombol opsi (WHATSAPP & EMAIL) */
+  .btn-secondary {
+    color: #9d814c;
+    background-color: #111111; /* Latar belakang gelap agar tidak transparan bertumpuk */
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(157, 129, 76, 0.1);
+    color: #bfa165;
+    border-color: #bfa165;
+  }
+
+  /* Container untuk opsi WA dan Email (disembunyikan secara default) */
+  .contact-options {
+    position: absolute;
+    top: 100%; /* Muncul tepat di bawah tombol utama */
+    left: 0;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row; /* Berjejer ke samping */
+    gap: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px); /* Efek animasi geser */
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Mencegah tombol terpotong ke bawah */
+    z-index: 10;
+  }
+
+  /* Class tambahan yang akan ditrigger oleh JavaScript untuk memunculkan tombol */
+  .contact-options.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
